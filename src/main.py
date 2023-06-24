@@ -163,13 +163,23 @@ if __name__ == '__main__':
     import sys
 
     app = QApplication(sys.argv)
-    w = HuggingFaceModelRequirementsWidget([{'id':'runwayml/stable-diffusion-v1-5', 'type':'Stable Diffusion'},
- {'id':'CompVis/stable-diffusion-v1-4', 'type':'Stable Diffusion'},
- {'id':'deepset/tinyroberta-squad2'},
- {'id':'prompthero/openjourney', 'type':'Stable Diffusion'},
- {'id':'SG161222/Realistic_Vision_V1.4', 'type':'Stable Diffusion'},
- {'id':'stabilityai/stable-diffusion-2-1-base', 'type':'Stable Diffusion'},
- {'id':'tuner007/pegasus_paraphrase'}])
+
+    # set desired model to show
+
+    # The dictionary should be defined as follows:
+    # { "id": "model_name", "type": "type" }
+    # The "type" should be written as either "General" or "Stable Diffusion." If the type is not specified, it will be initialized as "General."
+    # I couldn't find a definitive way to extract the type based on the model name from HuggingFace, so we had no choice but to do it as follows.
+
+    model_subset = [{'id': 'runwayml/stable-diffusion-v1-5', 'type': 'Stable Diffusion'},
+     {'id': 'CompVis/stable-diffusion-v1-4', 'type': 'Stable Diffusion'},
+     {'id': 'deepset/tinyroberta-squad2'},
+     {'id': 'prompthero/openjourney', 'type': 'Stable Diffusion'},
+     {'id': 'SG161222/Realistic_Vision_V1.4', 'type': 'Stable Diffusion'},
+     {'id': 'stabilityai/stable-diffusion-2-1-base', 'type': 'Stable Diffusion'},
+     {'id': 'tuner007/pegasus_paraphrase'}]
+
+    w = HuggingFaceModelRequirementsWidget(model_subset)
     w.resize(640, 480)
     w.show()
     sys.exit(app.exec())
