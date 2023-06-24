@@ -29,6 +29,12 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
 
     # set desired model to show
+    
+    # The dictionary should be defined as follows:
+    # { "id": "model_name", "type": "type" }
+    # The "type" should be written as either "General" or "Stable Diffusion." If the type is not specified, it will be initialized as "General."
+    # I couldn't find a definitive way to extract the type based on the model name from HuggingFace, so we had no choice but to do it as follows.
+    
     model_subset = [{'id': 'runwayml/stable-diffusion-v1-5', 'type': 'Stable Diffusion'},
      {'id': 'CompVis/stable-diffusion-v1-4', 'type': 'Stable Diffusion'},
      {'id': 'deepset/tinyroberta-squad2'},
