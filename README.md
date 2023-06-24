@@ -1,6 +1,6 @@
 # pyqt-huggingface-model-requirements-list
 
-[![](https://img.shields.io/badge/korean-readme-green)](https://github.com/yjg30737/pyqt-openai/blob/main/README.kr.md)
+[![](https://img.shields.io/badge/korean-readme-green)](https://github.com/yjg30737/pyqt-huggingface-model-requirements-list/blob/main/README.kr.md)
   
 This is another version of <a href="https://github.com/yjg30737/huggingface_gui/edit/main/README.md">huggingface_gui</a>. Instead of displaying all the models on the PC at once, it only shows the user-defined subset of models. The models are located within a table widget.
 
